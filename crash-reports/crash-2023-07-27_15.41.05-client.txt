@@ -1,0 +1,90 @@
+---- Minecraft Crash Report ----
+// Don't be sad, have a hug! <3
+
+Time: 2023-07-27 15:41
+Description: Unexpected error
+
+java.lang.ClassCastException: class net.minecraft.entity.monster.EntitySkeleton cannot be cast to class net.minecraft.client.entity.AbstractClientPlayer (net.minecraft.entity.monster.EntitySkeleton and net.minecraft.client.entity.AbstractClientPlayer are in unnamed module of loader 'app')
+	at wtf.expensive.modules.impl.render.HUDModule.lambda$new$4(HUDModule.java:186)
+	at wtf.expensive.event.EventProtocol.dispatch(EventProtocol.java:42)
+	at wtf.expensive.event.EventManager.dispatchEvent(EventManager.java:7)
+	at net.minecraft.client.gui.GuiIngame.renderGameOverlay(GuiIngame.java:307)
+	at net.minecraft.client.renderer.EntityRenderer.updateCameraAndRender(EntityRenderer.java:1248)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1122)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:512)
+	at net.minecraft.client.main.Main.main(Main.java:115)
+	at Start.main(Start.java:11)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at wtf.expensive.modules.impl.render.HUDModule.lambda$new$4(HUDModule.java:186)
+	at wtf.expensive.event.EventProtocol.dispatch(EventProtocol.java:42)
+	at wtf.expensive.event.EventManager.dispatchEvent(EventManager.java:7)
+	at net.minecraft.client.gui.GuiIngame.renderGameOverlay(GuiIngame.java:307)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['fusurt'/733, l='MpServer', x=-288.93, y=63.80, z=300.65]]
+	Chunk stats: MultiplayerChunkCache: 222, 222
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (-305,64,244), Chunk: (at 15,4,4 in -20,15; contains blocks -320,0,240 to -305,255,255), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 39763 game time, 39763 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 83 total; [EntityVillager['Крестьянин'/512, l='MpServer', x=-250.85, y=64.00, z=224.49], EntityCreeper['Крипер'/513, l='MpServer', x=-252.50, y=64.00, z=282.50], EntityCreeper['Крипер'/514, l='MpServer', x=-250.50, y=64.00, z=280.50], EntityCreeper['Крипер'/515, l='MpServer', x=-255.50, y=64.00, z=277.50], EntitySheep['Овца'/516, l='MpServer', x=-240.50, y=67.00, z=336.50], EntityZombie['Зомби'/517, l='MpServer', x=-255.50, y=68.00, z=341.50], EntityChicken['Курица'/524, l='MpServer', x=-235.26, y=63.00, z=221.67], EntityChicken['Курица'/529, l='MpServer', x=-232.50, y=67.00, z=326.50], EntityChicken['Курица'/530, l='MpServer', x=-234.50, y=67.00, z=326.50], EntityChicken['Курица'/531, l='MpServer', x=-232.50, y=67.00, z=325.50], EntityChicken['Курица'/532, l='MpServer', x=-232.50, y=67.00, z=325.50], EntitySheep['Овца'/533, l='MpServer', x=-233.50, y=71.00, z=341.50], EntityBat['Летучая мышь'/1062, l='MpServer', x=-326.30, y=25.57, z=312.75], EntityBat['Летучая мышь'/1063, l='MpServer', x=-328.54, y=25.12, z=322.14], EntityBat['Летучая мышь'/1065, l='MpServer', x=-326.40, y=28.07, z=329.00], EntityCreeper['Крипер'/1086, l='MpServer', x=-287.50, y=62.00, z=323.50], EntitySkeleton['Скелет'/1087, l='MpServer', x=-356.50, y=24.00, z=230.50], EntityChicken['Курица'/832, l='MpServer', x=-324.50, y=66.00, z=291.50], EntityCreeper['Крипер'/838, l='MpServer', x=-253.50, y=34.00, z=287.50], EntityCreeper['Крипер'/849, l='MpServer', x=-364.50, y=64.00, z=255.50], EntitySkeleton['Скелет'/852, l='MpServer', x=-347.50, y=72.00, z=243.50], EntityZombie['Зомби'/1117, l='MpServer', x=-243.90, y=63.00, z=289.58], EntityCreeper['Крипер'/1135, l='MpServer', x=-228.50, y=20.00, z=275.50], EntitySkeleton['Скелет'/1156, l='MpServer', x=-260.50, y=65.00, z=286.31], EntityEnderman['Эндермен'/389, l='MpServer', x=-366.50, y=52.00, z=270.50], EntityCreeper['Крипер'/1158, l='MpServer', x=-282.50, y=63.00, z=274.50], EntitySkeleton['Скелет'/1174, l='MpServer', x=-340.50, y=65.00, z=252.73], EntityZombie['Зомби'/1180, l='MpServer', x=-290.80, y=66.00, z=307.52], EntityZombie['Зомби'/1181, l='MpServer', x=-300.29, y=64.00, z=308.27], EntityCreeper['Крипер'/1183, l='MpServer', x=-279.30, y=65.00, z=361.68], EntitySkeleton['Скелет'/928, l='MpServer', x=-218.69, y=63.00, z=278.49], EntityZombie['Зомби'/1184, l='MpServer', x=-353.50, y=63.00, z=328.50], EntitySpider['Паук'/929, l='MpServer', x=-223.97, y=63.00, z=274.30], EntityZombie['Зомби'/1185, l='MpServer', x=-355.50, y=63.00, z=329.50], EntityCreeper['Крипер'/933, l='MpServer', x=-223.48, y=64.00, z=280.17], EntityCreeper['Крипер'/1190, l='MpServer', x=-360.50, y=63.00, z=319.50], EntityCreeper['Крипер'/1194, l='MpServer', x=-360.50, y=63.00, z=333.50], EntityBat['Летучая мышь'/946, l='MpServer', x=-221.52, y=23.00, z=244.84], EntityCow['Корова'/440, l='MpServer', x=-331.47, y=76.00, z=220.83], EntityCow['Корова'/441, l='MpServer', x=-320.45, y=68.00, z=302.76], EntityCow['Корова'/442, l='MpServer', x=-330.18, y=64.00, z=308.48], EntityBat['Летучая мышь'/443, l='MpServer', x=-321.96, y=24.87, z=307.21], EntityCow['Корова'/444, l='MpServer', x=-323.50, y=65.00, z=304.50], EntityChicken['Курица'/445, l='MpServer', x=-324.20, y=64.00, z=308.68], EntityChicken['Курица'/446, l='MpServer', x=-327.75, y=64.00, z=306.28], EntityChicken['Курица'/447, l='MpServer', x=-327.02, y=64.00, z=305.54], EntityChicken['Курица'/448, l='MpServer', x=-325.50, y=64.00, z=307.50], EntitySheep['Овца'/449, l='MpServer', x=-324.50, y=64.00, z=317.50], EntitySheep['Овца'/450, l='MpServer', x=-325.50, y=64.00, z=315.50], EntitySheep['Овца'/451, l='MpServer', x=-324.50, y=64.00, z=318.50], EntityCreeper['Крипер'/452, l='MpServer', x=-322.50, y=64.00, z=313.50], EntityCreeper['Крипер'/453, l='MpServer', x=-325.50, y=64.00, z=312.50], EntitySheep['Овца'/454, l='MpServer', x=-324.50, y=63.00, z=321.50], EntitySheep['Овца'/467, l='MpServer', x=-316.27, y=73.00, z=227.48], EntityCow['Корова'/468, l='MpServer', x=-318.85, y=68.00, z=309.53], EntitySpider['Паук'/1236, l='MpServer', x=-288.50, y=66.00, z=352.50], EntitySkeleton['Скелет'/981, l='MpServer', x=-307.50, y=33.00, z=288.50], EntityZombieVillager['Зомби-крестьянин'/1238, l='MpServer', x=-291.50, y=66.00, z=353.50], EntitySkeleton['Скелет'/1241, l='MpServer', x=-293.50, y=66.00, z=339.50], EntitySpider['Паук'/1244, l='MpServer', x=-282.50, y=34.00, z=252.50], EntityCreeper['Крипер'/1245, l='MpServer', x=-274.50, y=68.00, z=365.50], EntityBat['Летучая мышь'/478, l='MpServer', x=-303.59, y=35.10, z=283.75], EntityChicken['Курица'/479, l='MpServer', x=-288.50, y=66.00, z=357.50], EntityPlayerSP['fusurt'/733, l='MpServer', x=-288.93, y=63.80, z=300.65], EntityCow['Корова'/484, l='MpServer', x=-287.23, y=68.00, z=222.49], EntityEnderman['Эндермен'/1253, l='MpServer', x=-251.77, y=63.00, z=250.48], EntitySkeleton['Скелет'/486, l='MpServer', x=-287.50, y=64.00, z=302.50], EntityChicken['Курица'/487, l='MpServer', x=-282.50, y=65.00, z=351.50], EntityChicken['Курица'/488, l='MpServer', x=-286.50, y=66.00, z=355.28], EntityChicken['Курица'/489, l='MpServer', x=-284.50, y=66.00, z=354.50], EntityVillager['Крестьянин'/491, l='MpServer', x=-267.73, y=64.00, z=235.54], EntityZombie['Зомби'/492, l='MpServer', x=-265.70, y=64.00, z=234.50], EntityVillager['Крестьянин'/493, l='MpServer', x=-261.27, y=64.00, z=255.50], EntityChicken['Курица'/494, l='MpServer', x=-268.50, y=63.00, z=303.50], EntityChicken['Курица'/495, l='MpServer', x=-259.84, y=63.00, z=294.88], EntityChicken['Курица'/496, l='MpServer', x=-269.50, y=63.00, z=299.20], EntityRabbit['Кролик'/497, l='MpServer', x=-269.60, y=64.00, z=303.80], EntityChicken['Курица'/498, l='MpServer', x=-260.03, y=64.00, z=309.96], EntityRabbit['Кролик'/499, l='MpServer', x=-267.50, y=64.00, z=308.38], EntityZombie['Зомби'/500, l='MpServer', x=-256.50, y=68.00, z=342.50], EntityVillager['Крестьянин'/508, l='MpServer', x=-251.59, y=64.00, z=223.61], EntityVillager['Крестьянин'/510, l='MpServer', x=-252.25, y=64.00, z=224.10], EntityVillager['Крестьянин'/511, l='MpServer', x=-251.50, y=64.00, z=224.67]]
+	Retry entities: 0 total; []
+	Server brand: vanilla
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:520)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2583)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:531)
+	at net.minecraft.client.main.Main.main(Main.java:115)
+	at Start.main(Start.java:11)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 19.0.2, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Amazon.com Inc.
+	Memory: 1046255352 bytes (997 MB) / 1937768448 bytes (1848 MB) up to 4257218560 bytes (4060 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	Launched Version: mcp
+	LWJGL: 2.9.4
+	OpenGL: NVIDIA GeForce GTX 1650/PCIe/SSE2 GL version 4.6.0 NVIDIA 536.67, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: Русский (Россия)
+	Profiler Position: N/A (disabled)
+	CPU: 8x Intel(R) Core(TM) i3-10100F CPU @ 3.60GHz
+	OptiFine Version: OptiFine_1.12.2_HD_U_C6
+	Render Distance Chunks: 7
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 4.6.0 NVIDIA 536.67
+	OpenGlRenderer: NVIDIA GeForce GTX 1650/PCIe/SSE2
+	OpenGlVendor: NVIDIA Corporation
+	CpuCount: 8

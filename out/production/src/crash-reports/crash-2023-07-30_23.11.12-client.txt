@@ -1,0 +1,90 @@
+---- Minecraft Crash Report ----
+// You should try our sister game, Minceraft!
+
+Time: 2023-07-30 23:11
+Description: Unexpected error
+
+java.lang.ClassCastException: class net.minecraft.entity.monster.EntityMagmaCube cannot be cast to class net.minecraft.client.entity.AbstractClientPlayer (net.minecraft.entity.monster.EntityMagmaCube and net.minecraft.client.entity.AbstractClientPlayer are in unnamed module of loader 'app')
+	at wtf.expensive.modules.impl.render.HUDModule.lambda$new$4(HUDModule.java:184)
+	at wtf.expensive.event.EventProtocol.dispatch(EventProtocol.java:42)
+	at wtf.expensive.event.EventManager.dispatchEvent(EventManager.java:7)
+	at net.minecraft.client.gui.GuiIngame.renderGameOverlay(GuiIngame.java:308)
+	at net.minecraft.client.renderer.EntityRenderer.updateCameraAndRender(EntityRenderer.java:1248)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1122)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:512)
+	at net.minecraft.client.main.Main.main(Main.java:115)
+	at Start.main(Start.java:11)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at wtf.expensive.modules.impl.render.HUDModule.lambda$new$4(HUDModule.java:184)
+	at wtf.expensive.event.EventProtocol.dispatch(EventProtocol.java:42)
+	at wtf.expensive.event.EventManager.dispatchEvent(EventManager.java:7)
+	at net.minecraft.client.gui.GuiIngame.renderGameOverlay(GuiIngame.java:308)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 19 total; [EntityPlayerSP['fusurt'/117339, l='MpServer', x=1407.70, y=155.00, z=1704.88], EntityOtherPlayerMP['1_X_Danik_X_1'/620641, l='MpServer', x=1422.25, y=154.45, z=1703.95], EntityOtherPlayerMP['Levune965'/630832, l='MpServer', x=1433.30, y=154.89, z=1694.66], EntityOtherPlayerMP['ForD210954545'/630449, l='MpServer', x=1406.70, y=155.00, z=1690.30], EntityOtherPlayerMP['AKK_AKK'/649962, l='MpServer', x=1411.63, y=154.00, z=1676.30], EntityOtherPlayerMP['krytoimatvey1234'/638450, l='MpServer', x=1416.56, y=159.00, z=1722.84], EntityOtherPlayerMP['Swayy_crews'/636916, l='MpServer', x=1424.20, y=159.00, z=1739.43], EntityOtherPlayerMP['den4ik3k'/650657, l='MpServer', x=1417.97, y=154.00, z=1679.30], EntityOtherPlayerMP['zveno'/637277, l='MpServer', x=1422.51, y=159.00, z=1731.86], EntityOtherPlayerMP['sega3000z'/634780, l='MpServer', x=1420.61, y=154.00, z=1685.25], EntityOtherPlayerMP['Alanniso328'/640024, l='MpServer', x=1402.30, y=154.00, z=1724.21], EntityOtherPlayerMP['Lerednal845'/631957, l='MpServer', x=1422.53, y=159.00, z=1725.89], EntityOtherPlayerMP['tr0xa'/648779, l='MpServer', x=1421.75, y=155.12, z=1703.61], EntityOtherPlayerMP['L1wwwy_69'/595270, l='MpServer', x=1418.70, y=154.00, z=1711.30], EntityOtherPlayerMP['zqoooooo'/636169, l='MpServer', x=1411.96, y=154.94, z=1698.40], EntityOtherPlayerMP['Redblay'/594876, l='MpServer', x=1424.93, y=159.66, z=1722.35], EntityOtherPlayerMP['Depressor'/651882, l='MpServer', x=1424.63, y=160.25, z=1722.17], EntityOtherPlayerMP['dih2'/648559, l='MpServer', x=1422.42, y=160.08, z=1726.16], EntityOtherPlayerMP['FlugerNew785'/647922, l='MpServer', x=1422.42, y=159.50, z=1747.25]]
+	Chunk stats: MultiplayerChunkCache: 121, 121
+	Level seed: 0
+	Level generator: ID 01 - flat, ver 0. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (1422,159,1729), Chunk: (at 14,9,1 in 88,108; contains blocks 1408,0,1728 to 1423,255,1743), Region: (2,3; contains chunks 64,96 to 95,127, blocks 1024,0,1536 to 1535,255,2047)
+	Level time: 5418 game time, 20001 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Forced entities: 131 total; [EntityOtherPlayerMP['zqoooooo'/636169, l='MpServer', x=1411.96, y=154.94, z=1698.40], EntityOtherPlayerMP['allhvh'/649558, l='MpServer', x=1422.64, y=159.00, z=1728.08], EntityOtherPlayerMP['tr0xa'/648779, l='MpServer', x=1422.23, y=159.00, z=1723.68], EntityOtherPlayerMP['Socher_Game'/648080, l='MpServer', x=1422.50, y=159.82, z=1729.50], EntityOtherPlayerMP['soaz_razmarin_c2'/649299, l='MpServer', x=1408.21, y=156.97, z=1712.83], EntityOtherPlayerMP['_HelloWin_'/647061, l='MpServer', x=1420.34, y=155.21, z=1694.83], EntityOtherPlayerMP['tr0xa'/648779, l='MpServer', x=1421.75, y=155.12, z=1703.61], EntityOtherPlayerMP['FlugerNew785'/647922, l='MpServer', x=1411.51, y=154.00, z=1706.73], EntityOtherPlayerMP['Alanniso328'/640024, l='MpServer', x=1402.30, y=154.00, z=1724.21], EntityOtherPlayerMP['L1wwwy_69'/595270, l='MpServer', x=1418.70, y=154.00, z=1711.30], EntityOtherPlayerMP['riato1166'/645482, l='MpServer', x=1422.37, y=159.00, z=1724.60], EntityOtherPlayerMP['LYHA_I_COLHCE'/646467, l='MpServer', x=1422.46, y=159.00, z=1721.16], EntityOtherPlayerMP['Swayy_crews'/636916, l='MpServer', x=1420.44, y=159.00, z=1730.26], EntityOtherPlayerMP['FlugerNew785'/647922, l='MpServer', x=1422.39, y=159.51, z=1746.05], EntityOtherPlayerMP['toothed123'/630621, l='MpServer', x=1421.51, y=159.96, z=1735.81], EntityOtherPlayerMP['zqoooooo'/636169, l='MpServer', x=1411.96, y=154.94, z=1698.40], EntityOtherPlayerMP['apalon_paladon'/628973, l='MpServer', x=1436.86, y=154.00, z=1652.70], EntityOtherPlayerMP['ForD210954545'/630449, l='MpServer', x=1406.70, y=155.00, z=1690.30], EntityOtherPlayerMP['L1wwwy_69'/595270, l='MpServer', x=1419.91, y=156.00, z=1692.79], EntityOtherPlayerMP['Redblay'/594876, l='MpServer', x=1424.93, y=159.66, z=1722.35], EntityPlayerSP['fusurt'/117339, l='MpServer', x=1407.70, y=155.00, z=1704.88], EntityOtherPlayerMP['apalon_paladon'/628973, l='MpServer', x=1419.93, y=154.00, z=1692.70], EntityOtherPlayerMP['ForD210954545'/630449, l='MpServer', x=1404.19, y=154.00, z=1684.76], EntityOtherPlayerMP['zqoooooo'/636169, l='MpServer', x=1425.51, y=159.38, z=1730.70], EntityOtherPlayerMP['Depressor'/651882, l='MpServer', x=1424.63, y=160.25, z=1722.17], EntityOtherPlayerMP['Sacrespe565'/645317, l='MpServer', x=1423.94, y=159.59, z=1737.32], EntityOtherPlayerMP['1_X_Danik_X_1'/620641, l='MpServer', x=1422.25, y=154.45, z=1703.95], EntityOtherPlayerMP['Levune965'/630832, l='MpServer', x=1433.30, y=154.89, z=1694.66], EntityOtherPlayerMP['kamikaze_v2'/649219, l='MpServer', x=1417.54, y=154.69, z=1693.66], EntityOtherPlayerMP['dih2'/648559, l='MpServer', x=1422.42, y=160.08, z=1726.16], EntityOtherPlayerMP['kinosabik'/569372, l='MpServer', x=1424.24, y=156.68, z=1716.23], EntityOtherPlayerMP['soaz_razmarin_c2'/649299, l='MpServer', x=1421.68, y=154.00, z=1709.35], EntityOtherPlayerMP['zqoooooo'/636169, l='MpServer', x=1446.37, y=154.43, z=1697.27], EntityOtherPlayerMP['L1wwwy_69'/595270, l='MpServer', x=1425.05, y=154.00, z=1688.30], EntityOtherPlayerMP['FlugerNew785'/647922, l='MpServer', x=1422.42, y=159.50, z=1747.25], EntityOtherPlayerMP['riato1166'/645482, l='MpServer', x=1423.55, y=159.00, z=1725.64], EntityOtherPlayerMP['_HelloWin_'/647061, l='MpServer', x=1422.20, y=159.00, z=1730.20], EntityOtherPlayerMP['Socher_Game'/639067, l='MpServer', x=1422.36, y=154.41, z=1708.07], EntityOtherPlayerMP['Swayy_crews'/636916, l='MpServer', x=1418.56, y=159.00, z=1727.46], EntityOtherPlayerMP['Ribider1045'/620571, l='MpServer', x=1422.53, y=159.00, z=1729.41], EntityOtherPlayerMP['zveno'/637277, l='MpServer', x=1422.51, y=159.00, z=1731.86], EntityOtherPlayerMP['saron1k'/608227, l='MpServer', x=1423.76, y=159.00, z=1730.60], EntityOtherPlayerMP['TIMONE3'/629507, l='MpServer', x=1422.53, y=159.00, z=1726.15], EntityOtherPlayerMP['Levune965'/630832, l='MpServer', x=1433.30, y=154.89, z=1694.66], EntityOtherPlayerMP['LYHA_I_COLHCE'/646467, l='MpServer', x=1441.87, y=154.14, z=1675.36], EntityItem['item.item.paper'/651317, l='MpServer', x=1408.00, y=154.25, z=1709.00], EntityOtherPlayerMP['NastikObemeXD'/637658, l='MpServer', x=1421.49, y=159.00, z=1728.38], EntityMagmaCube['Магмовый куб'/651318, l='MpServer', x=1408.00, y=154.43, z=1708.80], EntityOtherPlayerMP['L0kin'/645061, l='MpServer', x=1420.71, y=159.00, z=1726.14], EntityOtherPlayerMP['tr0xa'/648779, l='MpServer', x=1421.75, y=155.12, z=1703.61], EntityOtherPlayerMP['tr0xa'/648779, l='MpServer', x=1419.17, y=154.00, z=1704.57], EntityOtherPlayerMP['allhvh'/649558, l='MpServer', x=1411.20, y=161.07, z=1731.12], EntityOtherPlayerMP['Sacrespe565'/645317, l='MpServer', x=1417.10, y=154.00, z=1700.30], EntityOtherPlayerMP['Alanniso328'/640024, l='MpServer', x=1402.30, y=154.00, z=1724.21], EntityOtherPlayerMP['L1wwwy_69'/595270, l='MpServer', x=1418.70, y=154.00, z=1711.30], EntityOtherPlayerMP['Redblay'/594876, l='MpServer', x=1420.32, y=156.49, z=1715.71], EntityOtherPlayerMP['zveno'/637277, l='MpServer', x=1422.51, y=159.00, z=1731.86], EntityOtherPlayerMP['allhvh'/649558, l='MpServer', x=1445.52, y=155.53, z=1672.39], EntityOtherPlayerMP['dih2'/648559, l='MpServer', x=1421.23, y=159.13, z=1721.52], EntityOtherPlayerMP['Depressor'/651882, l='MpServer', x=1424.63, y=160.25, z=1722.17], EntityOtherPlayerMP['dih2'/648559, l='MpServer', x=1422.42, y=160.08, z=1726.16], EntityOtherPlayerMP['1_X_Danik_X_1'/620641, l='MpServer', x=1422.25, y=154.45, z=1703.95], EntityOtherPlayerMP['LYHA_I_COLHCE'/646467, l='MpServer', x=1440.40, y=154.00, z=1676.70], EntityOtherPlayerMP['Redblay'/594876, l='MpServer', x=1420.33, y=155.17, z=1714.51], EntityOtherPlayerMP['Sacrespe565'/645317, l='MpServer', x=1421.72, y=159.00, z=1720.88], EntityOtherPlayerMP['Azox_Game'/639298, l='MpServer', x=1419.43, y=159.00, z=1728.56], EntityOtherPlayerMP['AKK_AKK'/649962, l='MpServer', x=1411.63, y=154.00, z=1676.30], EntityOtherPlayerMP['Azox_Game'/639298, l='MpServer', x=1422.53, y=159.00, z=1723.65], EntityOtherPlayerMP['tr0xa'/648779, l='MpServer', x=1422.89, y=159.00, z=1724.68], EntityOtherPlayerMP['yudb1'/650032, l='MpServer', x=1418.02, y=159.00, z=1732.29], EntityOtherPlayerMP['sega3000z'/634780, l='MpServer', x=1439.02, y=154.00, z=1696.70], EntityOtherPlayerMP['Azox_Game'/639298, l='MpServer', x=1417.77, y=155.07, z=1672.30], EntityOtherPlayerMP['Munugo1550'/602059, l='MpServer', x=1419.73, y=154.00, z=1708.44], EntityOtherPlayerMP['kinosabik'/569372, l='MpServer', x=1419.64, y=157.16, z=1713.33], EntityOtherPlayerMP['_HelloWin_'/647061, l='MpServer', x=1418.93, y=154.87, z=1678.05], EntityOtherPlayerMP['kinosabik'/569372, l='MpServer', x=1425.49, y=154.41, z=1717.28], EntityOtherPlayerMP['allhvh'/621331, l='MpServer', x=1421.64, y=160.73, z=1734.54], EntityOtherPlayerMP['soaz_razmarin_c2'/649299, l='MpServer', x=1412.35, y=156.76, z=1692.41], EntityOtherPlayerMP['TIMONE3'/629507, l='MpServer', x=1421.49, y=159.69, z=1722.05], EntityOtherPlayerMP['kinosabik'/569372, l='MpServer', x=1423.98, y=155.00, z=1708.30], EntityOtherPlayerMP['Alanniso328'/640024, l='MpServer', x=1435.38, y=156.68, z=1704.86], EntityOtherPlayerMP['Lerednal845'/631957, l='MpServer', x=1418.33, y=159.00, z=1718.53], EntityOtherPlayerMP['allhvh'/621331, l='MpServer', x=1428.08, y=159.01, z=1735.51], EntityOtherPlayerMP['krytoimatvey1234'/638450, l='MpServer', x=1416.56, y=159.00, z=1722.84], EntityOtherPlayerMP['FlugerNew785'/647922, l='MpServer', x=1425.62, y=159.91, z=1717.20], EntityOtherPlayerMP['tr0xa'/648779, l='MpServer', x=1422.89, y=159.34, z=1719.55], EntityOtherPlayerMP['sega3000z'/634780, l='MpServer', x=1420.61, y=154.00, z=1685.25], EntityOtherPlayerMP['Alanniso328'/640024, l='MpServer', x=1402.30, y=154.00, z=1724.21], EntityOtherPlayerMP['ForD210954545'/630449, l='MpServer', x=1404.19, y=154.00, z=1684.76], EntityOtherPlayerMP['FlugerNew785'/647922, l='MpServer', x=1422.54, y=159.00, z=1718.84], EntityOtherPlayerMP['Lerednal845'/631957, l='MpServer', x=1422.53, y=159.00, z=1725.89], EntityOtherPlayerMP['LYHA_I_COLHCE'/646467, l='MpServer', x=1422.53, y=159.00, z=1730.16], EntityOtherPlayerMP['Ribider1045'/620571, l='MpServer', x=1422.53, y=159.00, z=1729.41], EntityOtherPlayerMP['den4ik3k'/650657, l='MpServer', x=1417.97, y=154.00, z=1679.30], EntityOtherPlayerMP['Swayy_crews'/636916, l='MpServer', x=1424.20, y=159.00, z=1739.43], EntityOtherPlayerMP['zveno'/637277, l='MpServer', x=1422.51, y=159.00, z=1731.86], EntityOtherPlayerMP['den4ik3k'/650657, l='MpServer', x=1417.97, y=154.00, z=1679.30], EntityOtherPlayerMP['Alanniso328'/640024, l='MpServer', x=1402.30, y=154.00, z=1724.21], EntityOtherPlayerMP['Redblay'/594876, l='MpServer', x=1424.93, y=159.66, z=1722.35], EntityOtherPlayerMP['Socher_Game'/648080, l='MpServer', x=1421.08, y=155.12, z=1711.48], EntityOtherPlayerMP['ForD210954545'/630449, l='MpServer', x=1406.70, y=155.00, z=1690.30], EntityOtherPlayerMP['LYHA_I_COLHCE'/646467, l='MpServer', x=1463.21, y=153.00, z=1698.26], EntityOtherPlayerMP['toothed123'/630621, l='MpServer', x=1407.71, y=92.00, z=1748.92], EntityOtherPlayerMP['Swayy_crews'/636916, l='MpServer', x=1418.56, y=159.00, z=1727.46], EntityOtherPlayerMP['toothed123'/630621, l='MpServer', x=1408.99, y=92.38, z=1745.85], EntityOtherPlayerMP['L0kin'/645061, l='MpServer', x=1413.81, y=159.00, z=1723.51], EntityOtherPlayerMP['Ribider1045'/620571, l='MpServer', x=1422.53, y=159.00, z=1729.41], EntityOtherPlayerMP['NastikObemeXD'/637658, l='MpServer', x=1428.87, y=159.00, z=1734.02], EntityOtherPlayerMP['saron1k'/608227, l='MpServer', x=1423.76, y=159.00, z=1730.60], EntityOtherPlayerMP['yudb1'/650032, l='MpServer', x=1422.66, y=160.31, z=1744.90], EntityOtherPlayerMP['dih2'/627753, l='MpServer', x=1422.53, y=159.00, z=1729.41], EntityOtherPlayerMP['zveno'/637277, l='MpServer', x=1422.51, y=159.00, z=1731.86], EntityOtherPlayerMP['zveno'/637277, l='MpServer', x=1422.51, y=159.00, z=1731.86], EntityOtherPlayerMP['kamikaze_v2'/649219, l='MpServer', x=1430.91, y=155.04, z=1689.49], EntityOtherPlayerMP['Sacrespe565'/645317, l='MpServer', x=1410.18, y=156.53, z=1713.20], EntityOtherPlayerMP['AKK_AKK'/649962, l='MpServer', x=1411.63, y=154.00, z=1676.30], EntityOtherPlayerMP['sega3000z'/634780, l='MpServer', x=1420.61, y=154.00, z=1685.25], EntityOtherPlayerMP['toothed123'/630621, l='MpServer', x=1428.39, y=153.00, z=1651.06], EntityOtherPlayerMP['Alanniso328'/640024, l='MpServer', x=1402.30, y=154.00, z=1724.21], EntityOtherPlayerMP['FlugerNew785'/647922, l='MpServer', x=1423.40, y=160.15, z=1726.87], EntityOtherPlayerMP['_HelloWin_'/647061, l='MpServer', x=1420.90, y=159.00, z=1721.61], EntityOtherPlayerMP['Alanniso328'/640024, l='MpServer', x=1413.88, y=154.16, z=1698.40], EntityOtherPlayerMP['Lerednal845'/631957, l='MpServer', x=1422.53, y=159.00, z=1725.89], EntityOtherPlayerMP['Redblay'/594876, l='MpServer', x=1416.89, y=159.69, z=1727.70], EntityOtherPlayerMP['dih2'/648559, l='MpServer', x=1422.53, y=159.18, z=1718.47], EntityOtherPlayerMP['Azox_Game'/639298, l='MpServer', x=1422.53, y=155.08, z=1706.40], EntityOtherPlayerMP['NastikObemeXD'/637658, l='MpServer', x=1422.15, y=159.00, z=1725.43], EntityOtherPlayerMP['krytoimatvey1234'/638450, l='MpServer', x=1416.56, y=159.00, z=1722.84], EntityOtherPlayerMP['FlugerNew785'/647922, l='MpServer', x=1422.42, y=159.50, z=1747.25], EntityOtherPlayerMP['420team'/648717, l='MpServer', x=1422.53, y=159.00, z=1729.41], EntityOtherPlayerMP['Swayy_crews'/636916, l='MpServer', x=1424.20, y=159.00, z=1739.43]]
+	Retry entities: 0 total; []
+	Server brand: BotFilter (git:BungeeCord-Bootstrap:1.19-R0.1-SNAPSHOT:b523879:unknown) <- Spigot
+	Server type: Non-integrated multiplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:520)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2583)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:531)
+	at net.minecraft.client.main.Main.main(Main.java:115)
+	at Start.main(Start.java:11)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 19.0.2, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Amazon.com Inc.
+	Memory: 513532280 bytes (489 MB) / 1986002944 bytes (1894 MB) up to 4257218560 bytes (4060 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	Launched Version: mcp
+	LWJGL: 2.9.4
+	OpenGL: NVIDIA GeForce GTX 1650/PCIe/SSE2 GL version 4.6.0 NVIDIA 536.67, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 3 (incompatible)
+	Current Language: Русский (Россия)
+	Profiler Position: N/A (disabled)
+	CPU: 8x Intel(R) Core(TM) i3-10100F CPU @ 3.60GHz
+	OptiFine Version: OptiFine_1.12.2_HD_U_C6
+	Render Distance Chunks: 7
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 4.6.0 NVIDIA 536.67
+	OpenGlRenderer: NVIDIA GeForce GTX 1650/PCIe/SSE2
+	OpenGlVendor: NVIDIA Corporation
+	CpuCount: 8

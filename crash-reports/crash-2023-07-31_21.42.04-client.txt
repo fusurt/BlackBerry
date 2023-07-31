@@ -1,0 +1,106 @@
+---- Minecraft Crash Report ----
+// Daisy, daisy...
+
+Time: 2023-07-31 21:42
+Description: Tesselating block model
+
+java.util.ConcurrentModificationException
+	at java.base/java.util.ArrayList$Itr.checkForComodification(ArrayList.java:1013)
+	at java.base/java.util.ArrayList$Itr.next(ArrayList.java:967)
+	at wtf.expensive.modules.ModuleManager.get(ModuleManager.java:107)
+	at net.minecraft.client.renderer.BlockModelRenderer.renderModel(BlockModelRenderer.java:87)
+	at net.minecraft.client.renderer.BlockModelRenderer.renderModel(BlockModelRenderer.java:55)
+	at net.minecraft.client.renderer.BlockRendererDispatcher.renderBlock(BlockRendererDispatcher.java:75)
+	at net.minecraft.client.renderer.chunk.RenderChunk.rebuildChunk(RenderChunk.java:267)
+	at net.minecraft.client.renderer.chunk.ChunkRenderWorker.processTask(ChunkRenderWorker.java:119)
+	at net.minecraft.client.renderer.chunk.ChunkRenderWorker.run(ChunkRenderWorker.java:47)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at java.base/java.util.ArrayList$Itr.checkForComodification(ArrayList.java:1013)
+	at java.base/java.util.ArrayList$Itr.next(ArrayList.java:967)
+	at wtf.expensive.modules.ModuleManager.get(ModuleManager.java:107)
+
+-- Block model being tesselated --
+Details:
+	Block: minecraft:stained_glass_pane[color=white,east=true,north=false,south=false,west=true]
+	Block location: World: (1395,94,1736), Chunk: (at 3,5,8 in 87,108; contains blocks 1392,0,1728 to 1407,255,1743), Region: (2,3; contains chunks 64,96 to 95,127, blocks 1024,0,1536 to 1535,255,2047)
+	Using AO: false
+Stacktrace:
+	at net.minecraft.client.renderer.BlockModelRenderer.renderModel(BlockModelRenderer.java:87)
+	at net.minecraft.client.renderer.BlockModelRenderer.renderModel(BlockModelRenderer.java:55)
+
+-- Block being tesselated --
+Details:
+	Block type: ID #160 (tile.thinStainedGlass // net.minecraft.block.BlockStainedGlassPane)
+	Block data value: 0 / 0x0 / 0b0000
+	Block location: World: (1395,94,1736), Chunk: (at 3,5,8 in 87,108; contains blocks 1392,0,1728 to 1407,255,1743), Region: (2,3; contains chunks 64,96 to 95,127, blocks 1024,0,1536 to 1535,255,2047)
+Stacktrace:
+	at net.minecraft.client.renderer.BlockRendererDispatcher.renderBlock(BlockRendererDispatcher.java:75)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 6 total; [EntityPlayerSP['fusurt'/123853, l='MpServer', x=1414.21, y=159.80, z=1724.52], EntityOtherPlayerMP['Ryleto4ka'/578895, l='MpServer', x=1422.53, y=159.00, z=1729.41], EntityOtherPlayerMP['Lkmn'/594789, l='MpServer', x=1422.53, y=159.00, z=1729.41], EntityOtherPlayerMP['thionnt1329'/597926, l='MpServer', x=1421.53, y=159.45, z=1729.31], EntityOtherPlayerMP['smertixel'/469434, l='MpServer', x=1420.03, y=159.00, z=1725.98], EntityOtherPlayerMP['nespit'/596648, l='MpServer', x=1419.44, y=154.00, z=1709.31]]
+	Chunk stats: MultiplayerChunkCache: 121, 121
+	Level seed: 0
+	Level generator: ID 01 - flat, ver 0. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (1422,159,1729), Chunk: (at 14,9,1 in 88,108; contains blocks 1408,0,1728 to 1423,255,1743), Region: (2,3; contains chunks 64,96 to 95,127, blocks 1024,0,1536 to 1535,255,2047)
+	Level time: 64 game time, 20001 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Forced entities: 14 total; [EntityOtherPlayerMP['Ryleto4ka'/578895, l='MpServer', x=1422.53, y=159.00, z=1729.41], EntityOtherPlayerMP['nespit'/596648, l='MpServer', x=1419.44, y=154.00, z=1709.31], EntityItem['item.item.paper'/598061, l='MpServer', x=1408.00, y=154.25, z=1709.00], EntityMagmaCube['Магмовый куб'/598062, l='MpServer', x=1408.00, y=154.43, z=1708.80], EntityItem['item.item.swordIron'/598050, l='MpServer', x=1422.50, y=159.25, z=1726.55], EntityPlayerSP['fusurt'/123853, l='MpServer', x=1414.21, y=159.00, z=1724.52], EntityOtherPlayerMP['Lkmn'/594789, l='MpServer', x=1422.53, y=159.00, z=1729.41], EntityOtherPlayerMP['Ryleto4ka'/578895, l='MpServer', x=1422.53, y=159.00, z=1729.41], EntityOtherPlayerMP['Lkmn'/594789, l='MpServer', x=1422.53, y=159.00, z=1729.41], EntityOtherPlayerMP['thionnt1329'/597926, l='MpServer', x=1421.66, y=159.89, z=1730.04], EntityOtherPlayerMP['thionnt1329'/597926, l='MpServer', x=1421.66, y=159.89, z=1730.04], EntityOtherPlayerMP['smertixel'/469434, l='MpServer', x=1420.03, y=159.00, z=1725.98], EntityOtherPlayerMP['nespit'/596648, l='MpServer', x=1419.44, y=154.00, z=1709.31], EntityOtherPlayerMP['smertixel'/469434, l='MpServer', x=1420.03, y=159.00, z=1725.98]]
+	Retry entities: 0 total; []
+	Server brand: BotFilter (git:BungeeCord-Bootstrap:1.19-R0.1-SNAPSHOT:b523879:unknown) <- Spigot
+	Server type: Non-integrated multiplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:520)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2583)
+	at net.minecraft.client.renderer.chunk.ChunkRenderWorker.run(ChunkRenderWorker.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 19.0.2, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Amazon.com Inc.
+	Memory: 915534320 bytes (873 MB) / 1979711488 bytes (1888 MB) up to 4257218560 bytes (4060 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	Launched Version: mcp
+	LWJGL: 2.9.4
+	OpenGL: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 3 (incompatible)
+	Current Language: Русский (Россия)
+	Profiler Position: N/A (disabled)
+	CPU: 8x Intel(R) Core(TM) i3-10100F CPU @ 3.60GHz
+	OptiFine Version: OptiFine_1.12.2_HD_U_C6
+	Render Distance Chunks: 7
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 4.6.0 NVIDIA 536.67
+	OpenGlRenderer: NVIDIA GeForce GTX 1650/PCIe/SSE2
+	OpenGlVendor: NVIDIA Corporation
+	CpuCount: 8
